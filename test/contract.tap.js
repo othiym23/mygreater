@@ -25,8 +25,6 @@ test("basic async migration", function (t) {
     mygreater.revert(set, function () {
       t.equal(data.length, 4, "element was removed on rollback");
       t.deepEqual(data, [0, 1, 2, 3], "data was restored on rollback");
-
-      t.end();
     });
   });
 });
@@ -41,6 +39,4 @@ test("basic sync migration", function (t) {
   mygreater.revert(set);
   t.equal(data.length, 4, "element was removed on rollback");
   t.deepEqual(data, [0, 1, 2, 3], "data was restored on rollback");
-
-  t.end();
 });
